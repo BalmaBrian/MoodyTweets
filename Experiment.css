@@ -5,12 +5,8 @@ body {
   padding: 0;
 }
 
-header {
-  background-color: #466995;
-  border-bottom: 1px solid #466995;
-  position: fixed;
+div {
   width: 100%;
-  z-index: 10;
 }
 
 ul {
@@ -19,23 +15,12 @@ ul {
   text-align: center;
 }
 
-li {
-  color: #FFF;
-  font-family: 'Oswald', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  text-transform: uppercase;
-  display: inline-block;
-  width: 80px;
-  margin: 20px;
-}
-
 li:hover {
   color: #DBE9EE;
 }
 
 h1 {
-  color: #466995;
+  color: white;
   font-family: 'Oswald', sans-serif;
   font-size: 32px;
   font-weight: 300;
@@ -60,26 +45,10 @@ h3 {
   padding: 30px;
 }
 
-h4 {
-  color: #466995;
-  font-family: 'Oswald', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-align: center;
-  text-transform: uppercase
-}
-
 p {
   color: #333;
   font-family: 'Varela Round', sans-serif;
   font-size: 18px;
-}
-
-footer {
-  background-color: #DBE9EE;
-  text-align: center;
-  height: 100px;
 }
 
 .welcome {
@@ -96,7 +65,6 @@ footer {
   text-align: center;
   position: relative;
   top: 40px;
-
 }
 
 .answer {
@@ -104,7 +72,6 @@ footer {
   margin: 20px;
   height: 150px;
   width: 100% auto;
-
 }
 
 .answer:hover {
@@ -113,6 +80,102 @@ footer {
   transition: background .75s;
 }
 
-footer h3{
-  color:black;
+.input {
+  position: relative;
+  font-size: 1.5em;
+  background: linear-gradient(21deg, #10abff, #1beabd);
+  padding: 3px;
+  display: inline-block;
+  border-radius: 9999em;
+}
+.input *:not(span) {
+  position: relative;
+  display: inherit;
+  border-radius: inherit;
+  margin: 0;
+  border: none;
+  outline: none;
+  padding: 0 .325em;
+  z-index: 1;
+}
+.input *:not(span):focus + span {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.input span {
+  -webkit-transform: scale(0.993, 0.94);
+          transform: scale(0.993, 0.94);
+  -webkit-transition: opacity .25s, -webkit-transform .5s;
+  transition: opacity .25s, -webkit-transform .5s;
+  transition: transform .5s, opacity .25s;
+  transition: transform .5s, opacity .25s, -webkit-transform .5s;
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+  margin: 4px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd,  -3px 3px 30px #10abff;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+body {
+  text-align: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+html, body {
+  height: 100%;
+}
+
+input {
+  font-family: inherit;
+  line-height: inherit;
+  color: #2e3750;
+  min-width: 12em;
+}
+
+::-webkit-input-placeholder {
+  color: #cbd0d5;
+}
+
+::-moz-placeholder {
+  color: #cbd0d5;
+}
+
+:-ms-input-placeholder {
+  color: #cbd0d5;
+}
+
+::-ms-input-placeholder {
+  color: #cbd0d5;
+}
+
+::placeholder {
+  color: #cbd0d5;
+}
+
+html::after {
+  content: '';
+  background: linear-gradient(21deg, #10abff, #1beabd);
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
