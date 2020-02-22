@@ -80,6 +80,16 @@ p {
   transition: background .75s;
 }
 
+button {
+  position: relative;
+  font-size: 1.5;
+  background: linear-gradient(21deg, #10abff, #1beabd);
+  padding: 3px;
+  display: inline-block;
+  border-radius: 9999em;
+  color:white
+}
+
 .input {
   position: relative;
   font-size: 1.5em;
