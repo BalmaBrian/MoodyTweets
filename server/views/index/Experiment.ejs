@@ -26,13 +26,13 @@
         </span>
       </form>
     <br>
-    <div class="spinner-border" role="status">
+    <div class="spinner-border" role="status" display="none" id="load">
       <span class="sr-only">Loading...</span>
     </div>
     </div>
     <script>
 		function loading() {
-		
+        Document.getElementById("load").setAttribute("display", "inline-block");
 		}
     </script>
     </div>
