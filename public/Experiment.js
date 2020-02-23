@@ -1,2 +1,5 @@
 var key = "password" 
-document.addEventListener("DOMContentLoaded"
+document.addEventListener("DOMContentLoaded", function(event) {
+	
+	
+});
