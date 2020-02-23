@@ -24,21 +24,13 @@
         </span>
       </form>
     <br>
-    <div class = "loader-wrapper"id ="load1">
-      <span class="loader" id="load2"><span class="loader-inner" id="load3"></span></span>
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
     </div>
     <script>
 		function loading() {
-			var disp1 = document.getElementById("load1");
-			var disp2 = document.getElementById("load2");
-			var disp3 = document.getElementById("load3");
-			disp1.display = "inline-block"
-			disp2.display = "inline-block"
-			disp3.display = "inline-block"
-			
-			$(windows).on("load", function(){
-        	$(".loader-wrapper").fadeOut("slow");
-      		});
+		
 		}
     </script>
     </div>
