@@ -15,11 +15,12 @@
         <br>
         <h1>Find your Twitter Mood</h1>
       </ul>
-      <form action="/mood" method="GET">
+      <form method="GET">
         <span class="input">
-          <input id="handle" name="handle" type="text" placeholder="@Userhandle" required minlength="2" maxlength="16" pattern="@+[0-9a-zA-Z_]*">
-		  <button id="username" onclick="loading()" type="submit">What's the mood?</button>
-		  <button id="graph" onclick="window.location.href = '/graph';" type="submit">Graph</button>
+          <label>@</label>
+          <input id="handle" name="handle" type="text" placeholder="Userhandle" required minlength="2" maxlength="16" pattern="+[0-9a-zA-Z_]*">
+		  <button id="username" onclick="loading()" formaction="/mood" type="submit">What's the mood?</button>
+		  <button id="graph" formaction="/graph" type="submit">Graph</button>
           <span></span>	
         </span>
       </form>
