@@ -1,7 +1,7 @@
 body {
     background-color: #FFF;
     margin: 0 auto;
-    background: linear-gradient(90deg, #35577D, #141E30);
+    background: linear-gradient(90deg, #FE3E34, #873431);
     padding: 0;
   }
   
@@ -189,3 +189,8 @@ body {
     left: 0;
     top: 0;
   }
+
+.angry-img{
+	width: 150px;
+	height: 150px;
+}
