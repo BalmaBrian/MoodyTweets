@@ -90,7 +90,7 @@ button {
   color:white
 }
 
-.loader {
+loader {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -100,7 +100,7 @@ button {
   animation: loader 2s infinite ease;
 }
 
-.loader-inner {
+loader-inner {
   vertical-align: top;
   display: inline-block;
   width: 100%;

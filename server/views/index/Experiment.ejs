@@ -18,19 +18,22 @@
       <form action="/submit-username" method="GET">
         <span class="input">
           <input id="handle" name="handle" type="text" placeholder="@Userhandle" required minlength="2" maxlength="16" pattern="@+[0-9a-zA-Z_]*">
-		  <button id="username" onclick="loading" type="submit">What's the mood?</button>
+		  <button id="username" onclick="loading()" type="submit">What's the mood?</button>
           <span></span>	
         </span>
       </form>
     <br>
-
     <script>
 		function loading() {
-			<div class = "loader-wrapper">
-      		<span class="loader"><span class="loader-inner"></span></span>
-    		</div>
-        $(windows).on("load", function(){
-        $(".loader-wrapper").fadeOut("slow");
+			var wrap = document.createElement("loader-wrapper");
+			var loado = document.createElement("loader");
+			var loadi = document.createElement("loader-inner");
+			document.body.appendChild(loadi);
+			document.body.appendChild(loado);
+			document.body.appendChild(wrap);
+			
+			$(windows).on("load", function(){
+        	$(".loader-wrapper").fadeOut("slow");
       		});
 		}
     </script>
