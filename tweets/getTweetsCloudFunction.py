@@ -124,6 +124,7 @@ def getTweets(request):
         auth_api = API(auth)
 
         # GETS THE FINAL DATA
+#         user = auth_api.get_user(screen_name="artem__tkachuk")
         tweets = auth_api.user_timeline(screen_name=person, count=500, tweet_mode="extended")
         cleaned_tweets = []
         cleaner = CleanText()

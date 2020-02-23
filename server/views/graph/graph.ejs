@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2">
-                <img src="https://twitter.com/<%= handle %>/photo">
+                <img src="<%= profilePicUrl %>">
                 <p><%= handle %></p>
             </div>
             <div class="col">
@@ -23,7 +23,7 @@
         <script>
             let moods = "<%= moods %>".split(',');
             let times = "<%= times %>".split(',');
-            let borderColors = "<%= borderColors %>".split(',');
+
             let backgroundColors = "<%= backgroundColors %>".split('|');
 
             var ctx = document.getElementById('myChart');
@@ -35,7 +35,6 @@
                         label: 'Mood flux',
                         data: moods,
                         backgroundColor: backgroundColors,
-                        // borderColor: borderColors,
                         borderWidth: 1
                     }]
                 },

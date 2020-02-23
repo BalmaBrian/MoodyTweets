@@ -8,7 +8,11 @@ exports.renderGraph = async (req, res) => {
 
     const db = admin.firestore();
 
-    let userRef = db.collection('users').doc(handle);
+    let userRef = await db.collection('users').doc(handle);
+
+    let profilePicUrl = await userRef.get();
+
+    profilePicUrl = profilePicUrl.data().profilePicURL;
 
     userRef.set({
 
@@ -48,8 +52,9 @@ exports.renderGraph = async (req, res) => {
         moods: moods.map(doc => doc.mood),
         handle: handle,
         times: times,
+        profilePicUrl: profilePicUrl,
         backgroundColors: backgroundColors.join('|'),
-        borderColors: borderColors
+        // borderColors: borderColors
     });
 
     // const getTweetsCloudFunctionURL = 'https://us-central1-moody-tweets-62047.cloudfunctions.net/getTweets';
