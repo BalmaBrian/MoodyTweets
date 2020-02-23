@@ -1,4 +1,5 @@
 const request = require('request');
+const admin = require('firebase-admin');
 
 exports.renderMoodScreen = (req, res) => {
     const handle = req.query.handle;
@@ -16,28 +17,42 @@ exports.renderMoodScreen = (req, res) => {
             method: 'POST',
             json: {"tweets": tweets}
         }, (err, response, mood) => {
-            switch(mood) {
-                case 1:
-                    res.render('moods/angry/angry');
-                    break;
-                case 2:
-                    res.render('moods/sad/sad');
-                    break;
-                case 3:
-                    res.render('moods/neutral/neutral');
-                    break;
-                case 4:
-                    res.render('moods/fearful/fearful');
-                    break;
-                case 5:
-                    res.render('moods/surprised/surprised');
-                    break;
-                case 6:
-                    res.render('moods/happy/happy');
-                    break;
-                default:
-                    res.send(`Hello, World!`);
-            }
+
+            //log to firestore
+
+            const db = admin.firestore();
+
+            let userRef = db.collection('users').doc(handle);
+
+            let userMoodsRef = userRef.collection('moods');
+
+            userMoodsRef.add({
+                mood: mood,
+                timestamp: admin.firestore.FieldValue.serverTimestamp()
+            }).then((doc) => {
+                switch(mood) {
+                    case 1:
+                        res.render('moods/angry/angry');
+                        break;
+                    case 2:
+                        res.render('moods/sad/sad');
+                        break;
+                    case 3:
+                        res.render('moods/neutral/neutral');
+                        break;
+                    case 4:
+                        res.render('moods/fearful/fearful');
+                        break;
+                    case 5:
+                        res.render('moods/surprised/surprised');
+                        break;
+                    case 6:
+                        res.render('moods/happy/happy');
+                        break;
+                    default:
+                        res.send(`Hello, World!`);
+                }
+            })
         });
     });
 }

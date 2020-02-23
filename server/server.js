@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
+const admin = require('firebase-admin');
 
 const homePageRoutes = require('./routes/getHomePageRoutes');
 const renderMoodRoutes = require('./routes/renderMoodScreenRoutes');
@@ -12,6 +13,10 @@ const get404 = require('./controllers/404').get404;
 const app = express();
 // Listen to the App Engine-specified port, or 8080 otherwise
 const PORT = process.env.PORT || 8080;
+
+admin.initializeApp({
+    credential: admin.credential.applicationDefault()
+});
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
