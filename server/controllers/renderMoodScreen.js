@@ -24,6 +24,10 @@ exports.renderMoodScreen = (req, res) => {
 
             let userRef = db.collection('users').doc(handle);
 
+            userRef.set({
+
+            })
+
             let userMoodsRef = userRef.collection('moods');
 
             userMoodsRef.add({
