@@ -18,7 +18,7 @@
 
       <p>
         <span class="input">
-          <input type="text" placeholder="@Userhandle">
+          <input id="handle" type="text" placeholder="@Userhandle" required minlength="2" maxlength="16" pattern="@+[0-9a-zA-Z_]*">
           <span></span>	
         </span>
       </p>
@@ -26,7 +26,7 @@
 
       <p>
         <span class="input">
-          <button onclick="valid(handle)">What's the mood?</button>
+          <button id="handle">What's the mood?</button>
           <span></span>	
         </span>
       </p>
