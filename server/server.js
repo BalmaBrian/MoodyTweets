@@ -6,6 +6,7 @@ const request = require('request');
 
 const homePageRoutes = require('./routes/getHomePageRoutes');
 const renderMoodRoutes = require('./routes/renderMoodScreenRoutes');
+const renderGraphRoutes = require('./routes/renderGraphRoutes');
 const get404 = require('./controllers/404').get404;
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(homePageRoutes);
 app.use(renderMoodRoutes);
+app.use(renderGraphRoutes);
 app.use(get404);
 
 app.listen(PORT, () => {

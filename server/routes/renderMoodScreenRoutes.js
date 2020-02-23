@@ -3,6 +3,6 @@ const router = express.Router();
 
 const renderMoodScreen = require('../controllers/renderMoodScreen').renderMoodScreen;
 
-router.get('/submit-username', renderMoodScreen);
+router.get('/mood', renderMoodScreen);
 
 module.exports = router;
