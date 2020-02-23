@@ -1,0 +1,195 @@
+body {
+    background-color: #FFF;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #99FD49, #BBF17E);
+    padding: 0;
+  }
+  
+  div {
+    width: 100%;
+  }
+  
+  ul {
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  li:hover {
+    color: #DBE9EE;
+  }
+  
+  h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    color: #f4f4f4;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 26px;
+    font-weight: 100;
+    margin: 0 auto 20px auto;
+  }
+  
+  h3 {
+    color: f4f4f4;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 30px;
+  }
+  
+  p {
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 18px;
+  }
+  
+  .welcome {
+    background-color: #DBE9EE;
+   box-sizing: border-box;
+   padding: 40px;
+   text-align: center;
+   width: 100%;
+   position: relative;
+   top: 120px;
+  }
+  
+  .question {
+    text-align: center;
+    position: relative;
+    top: 40px;
+  }
+  
+  .answer {
+    border: 1px solid #466995;
+    margin: 20px;
+    height: 150px;
+    width: 100% auto;
+  }
+  
+  .answer:hover {
+    background: #117bff;
+    cursor: pointer;
+    transition: background .75s;
+  }
+  
+  button {
+    position: relative;
+    font-size: 1.5;
+    background: linear-gradient(21deg, #10abff, #1beabd);
+    padding: 3px;
+    display: inline-block;
+    border-radius: 9999em;
+    color:white
+  }
+  
+  .input {
+    position: relative;
+    font-size: 1.5em;
+    background: linear-gradient(21deg, #10abff, #1beabd);
+    padding: 3px;
+    display: inline-block;
+    border-radius: 9999em;
+  }
+  .input *:not(span) {
+    position: relative;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 0 .325em;
+    z-index: 1;
+  }
+  .input *:not(span):focus + span {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .input span {
+    -webkit-transform: scale(0.993, 0.94);
+            transform: scale(0.993, 0.94);
+    -webkit-transition: opacity .25s, -webkit-transform .5s;
+    transition: opacity .25s, -webkit-transform .5s;
+    transition: transform .5s, opacity .25s;
+    transition: transform .5s, opacity .25s, -webkit-transform .5s;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+    margin: 4px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd,  -3px 3px 30px #10abff;
+  }
+  
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5;
+    font-size: 1em;
+  }
+  
+  body {
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  input {
+    font-family: inherit;
+    line-height: inherit;
+    color: #2e3750;
+    min-width: 12em;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #cbd0d5;
+  }
+  
+  ::-moz-placeholder {
+    color: #cbd0d5;
+  }
+  
+  :-ms-input-placeholder {
+    color: #cbd0d5;
+  }
+  
+  ::-ms-input-placeholder {
+    color: #cbd0d5;
+  }
+  
+  ::placeholder {
+    color: #cbd0d5;
+  }
+  
+  html::after {
+    content: '';
+    background: linear-gradient(21deg, #10abff, #1beabd);
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+.surprised-img {
+	width: 150px;
+	height: 150px;
+}
