@@ -90,8 +90,8 @@ button {
   color:white
 }
 
-loader {
-  display: inline-block;
+.loader {
+  display: none;
   width: 30px;
   height: 30px;
   position: relative;
@@ -100,9 +100,9 @@ loader {
   animation: loader 2s infinite ease;
 }
 
-loader-inner {
+.loader-inner {
   vertical-align: top;
-  display: inline-block;
+  display: none;
   width: 100%;
   background-color: #fff;
   animation: loader-inner 2s infinite ease-in;
