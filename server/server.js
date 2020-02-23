@@ -6,6 +6,6 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '../public'), {index: false}))
 
-app.listen("5000", function() { 
-    console.log("Server running on 5000")
+app.listen("4200", function() { 
+    console.log("Server running on 4200")
 })
