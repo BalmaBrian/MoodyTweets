@@ -1,8 +1,9 @@
+"""Detects unsafe features in the file."""
+from google.cloud import vision
+import io
+import json
+
 def detect_safe_search(path):
-    """Detects unsafe features in the file."""
-    from google.cloud import vision
-    import io
-    import json
     client = vision.ImageAnnotatorClient()
 
     with io.open(path, 'rb') as image_file:
