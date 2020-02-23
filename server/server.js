@@ -1,14 +1,26 @@
 require('dotenv').config();
 
+const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+app.use(express.static(__dirname + '/public'));
+
+
 app.get('/', (req, res) => {
-    res.send('Hello from App Engine!');
+    res.render('index/Experiment');
 });
 
 app.get('/submit-username', (req, res) => {
     const handle = req.body.handle;
+
+    res.send(handle);
 
     // let tweets = await callGetTweets(handle);
 
@@ -16,9 +28,9 @@ app.get('/submit-username', (req, res) => {
 
     // switch(mood) {
     //     case 1:
-    //         render('sad');
+    //         res.render('moods/sad/sad');
     //     case 2;
-    //         render('normal');
+    //         res.render('normal');
     //         .....
     // }
 });
