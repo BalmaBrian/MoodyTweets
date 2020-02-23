@@ -32,9 +32,9 @@
 			var disp1 = document.getElementById("load1");
 			var disp2 = document.getElementById("load2");
 			var disp3 = document.getElementById("load3");
-			disp1.setAttribute("display", "inline-block");
-			disp2.setAttribute("display", "inline-block");
-			disp3.setAttribute("display", "inline-block");
+			disp1.display = "inline-block"
+			disp2.display = "inline-block"
+			disp3.display = "inline-block"
 			
 			$(windows).on("load", function(){
         	$(".loader-wrapper").fadeOut("slow");
