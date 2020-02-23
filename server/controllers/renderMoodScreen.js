@@ -1,7 +1,7 @@
 const request = require('request');
 
 exports.renderMoodScreen = (req, res) => {
-    const handle = req.query.handle.split('@')[1];
+    const handle = req.query.handle;
     const getTweetsCloudFunctionURL = 'https://us-central1-moody-tweets-62047.cloudfunctions.net/getTweets';
     const MLgetMoodCloudFunctionURL = 'https://us-central1-moody-tweets-62047.cloudfunctions.net/MLgetMood';
 
