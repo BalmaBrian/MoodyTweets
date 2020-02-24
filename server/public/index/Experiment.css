@@ -22,7 +22,7 @@ li:hover {
 h1 {
   color: white;
   font-family: 'Oswald', sans-serif;
-  font-size: 32px;
+  font-size: 48px;
   font-weight: 300;
   text-transform: uppercase;
 }
@@ -91,7 +91,7 @@ button {
 }
 
 .loader {
-  display: inline-block;
+  display: none;
   width: 30px;
   height: 30px;
   position: relative;
@@ -102,7 +102,7 @@ button {
 
 .loader-inner {
   vertical-align: top;
-  display: inline-block;
+  display: none;
   width: 100%;
   background-color: #fff;
   animation: loader-inner 2s infinite ease-in;

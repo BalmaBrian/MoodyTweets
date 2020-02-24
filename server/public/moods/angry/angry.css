@@ -194,3 +194,11 @@ body {
 	width: 150px;
 	height: 150px;
 }
+
+
+
+strong{
+	font-weight: bold;
+	font-style: italic;
+	color: black;
+}

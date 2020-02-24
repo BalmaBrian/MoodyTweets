@@ -11,7 +11,7 @@ import os
 from tweepy import OAuthHandler
 from tweepy import API
 
-def hello_world(request):
+def getTweets(request):
     """Responds to any HTTP request.
     Args:
         request (flask.Request): HTTP request object.
@@ -21,9 +21,8 @@ def hello_world(request):
         `make_response <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>`.
     """
     request_json = request.get_json()
-    if request.args and 'message' in request.args:
-        return request.args.get('message')
-    elif request_json and 'handle' in request_json:
+
+    if request_json and 'handle' in request_json:
         person = request_json['handle']
 
         class CleanText:
@@ -125,6 +124,7 @@ def hello_world(request):
         auth_api = API(auth)
 
         # GETS THE FINAL DATA
+#         user = auth_api.get_user(screen_name="artem__tkachuk")
         tweets = auth_api.user_timeline(screen_name=person, count=500, tweet_mode="extended")
         cleaned_tweets = []
         cleaner = CleanText()
@@ -137,10 +137,7 @@ def hello_world(request):
 
         dataset = pd.DataFrame(data=cleaned_tweets, columns=None, index=None)
 
-        dataset.to_csv(r'dataset1.txt')
-
-        return send_file(r'dataset1.txt')
+        return dataset.to_csv()
 
     else:
         return f'Hello World!'
-

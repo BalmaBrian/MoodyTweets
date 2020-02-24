@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mood graph for <%= handle %></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <img src="<%= profilePicUrl %>" width="200" height="200">
+                <p><%= handle %></p>
+            </div>
+            <div class="col">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+        <script>
+            let moods = "<%= moods %>".split(',');
+            let times = "<%= times %>".split(',');
+
+            let backgroundColors = "<%= backgroundColors %>".split('|');
+
+            var ctx = document.getElementById('myChart');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: times,
+                    datasets: [{
+                        label: 'Mood flux',
+                        data: moods,
+                        backgroundColor: backgroundColors,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                min: 0,
+                                max: 6,
+                                stepSize: 1
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
